@@ -1,0 +1,5 @@
+to create the flutter splash screen the commads that i needed was 
+
+flutter clean 
+flutter pub get 
+flutter pub run flutter_native_splash: create 
