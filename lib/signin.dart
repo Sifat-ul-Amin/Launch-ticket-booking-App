@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:launch_app/verificationcodescreen.dart';
+import 'package:launch_app/services/AuthenticationServie.dart';
+import 'package:provider/provider.dart';
 
 class Signinpage extends StatefulWidget {
   @override
@@ -98,10 +99,10 @@ class _SigninpageState extends State<Signinpage> {
                           width: 199,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(19)),
-                          child: RaisedButton(
-                            shape: StadiumBorder(),
+                          child: ElevatedButton(
+                            // shape: StadiumBorder(),
                             // shape: RoundedRectangleBorder(borderRadius: b),
-                            color: Colors.green[400],
+                            // color: Colors.green[400],
                             child: Text(
                               "SIGN IN",
                               style: TextStyle(
@@ -110,11 +111,17 @@ class _SigninpageState extends State<Signinpage> {
                                 fontSize: 20,
                               ),
                             ),
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (context) => Vcs()),
-                              );
+                            onPressed: () async {
+                              String message = await context
+                                  .read<AuthenticaitonService>()
+                                  .signIn(_email.trim(), _password.trim());
+                              if (message == 'success') {
+                                Navigator.pop(context);
+                              }
+                              // Navigator.push(
+                              //   context,
+                              //   MaterialPageRoute(builder: (context) => Vcs()),
+                              // );
                             },
                           ),
                         ),

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:launch_app/services/AuthenticationServie.dart';
+import 'package:provider/provider.dart';
 
 class SignUpPage extends StatefulWidget {
   @override
@@ -7,6 +9,15 @@ class SignUpPage extends StatefulWidget {
 
 class _SignUpPageState extends State<SignUpPage> {
   String _email, _password;
+
+  _submit() async {
+    String message = await context
+        .read<AuthenticaitonService>()
+        .createUser(_email.trim(), _password.trim());
+    if (message == 'success') {
+      Navigator.pop(context);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -102,21 +113,13 @@ class _SignUpPageState extends State<SignUpPage> {
                         padding: const EdgeInsets.symmetric(
                             horizontal: 16.0, vertical: 10),
                         child: TextField(
+                          obscureText: true,
                           onChanged: (val) {
-                            _email = val;
+                            _password = val;
                           },
-                          decoration: InputDecoration(labelText: "Password:"),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 16.0, vertical: 10),
-                        child: TextField(
-                          onChanged: (val) {
-                            _email = val;
-                          },
-                          decoration:
-                              InputDecoration(labelText: "Confirm password:"),
+                          decoration: InputDecoration(
+                            labelText: "Password:",
+                          ),
                         ),
                       ),
                       SizedBox(height: 20),
@@ -128,10 +131,10 @@ class _SignUpPageState extends State<SignUpPage> {
                           width: 199,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(19)),
-                          child: RaisedButton(
-                            shape: StadiumBorder(),
+                          child: ElevatedButton(
+                            // shape: StadiumBorder(),
                             // shape: RoundedRectangleBorder(borderRadius: b),
-                            color: Colors.green[400],
+                            // color: Colors.green[400],
                             child: Text(
                               "SIGN UP",
                               style: TextStyle(
@@ -140,7 +143,9 @@ class _SignUpPageState extends State<SignUpPage> {
                                 fontSize: 20,
                               ),
                             ),
-                            onPressed: () {},
+                            onPressed: () {
+                              _submit();
+                            },
                           ),
                         ),
                       ),

@@ -80,10 +80,10 @@ class _VcsState extends State<Vcs> {
                           width: 199,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(19)),
-                          child: RaisedButton(
-                            shape: StadiumBorder(),
+                          child: ElevatedButton(
+                            // shape: StadiumBorder(),
                             // shape: RoundedRectangleBorder(borderRadius: b),
-                            color: Colors.green[400],
+                            // color: Colors.green[400],
                             child: Text(
                               "Submit",
                               style: TextStyle(
@@ -93,7 +93,10 @@ class _VcsState extends State<Vcs> {
                               ),
                             ),
                             onPressed: () {
-                              MaterialPageRoute(builder: (context) => Home());
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => Home()),
+                              );
                             },
                           ),
                         ),

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "257788599042",
+    "project_id": "launch-ticket-online",
+    "storage_bucket": "launch-ticket-online.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:257788599042:android:3ac115936e1f47e2f7c01b",
+        "android_client_info": {
+          "package_name": "com.example.launch_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "257788599042-gogrdlru0l2t4avmr44s3ja56ftpld6j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfLsLsH5BH8ucfa3TWoA1Hj8MfVYz6MRs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "257788599042-gogrdlru0l2t4avmr44s3ja56ftpld6j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

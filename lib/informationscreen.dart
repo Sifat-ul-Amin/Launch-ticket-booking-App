@@ -46,7 +46,7 @@ class _InfoScreenState extends State<InfoScreen> {
                         child: Padding(
                           padding: const EdgeInsets.all(7),
                           child: Text(
-                            "LAUNCH INFORTAMION",
+                            "LAUNCH INFORMATION",
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 28,
@@ -105,10 +105,10 @@ class _InfoScreenState extends State<InfoScreen> {
                           width: 199,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(19)),
-                          child: RaisedButton(
-                            shape: StadiumBorder(),
+                          child: ElevatedButton(
+                            // shape: StadiumBorder(),
                             // shape: RoundedRectangleBorder(borderRadius: b),
-                            color: Colors.green[400],
+                            // color: Colors.green[400],
                             child: Text(
                               "Search",
                               style: TextStyle(
